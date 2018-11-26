@@ -21,7 +21,7 @@ export const logInUser = (event) => {
     .then(resp => {
       console.log(resp, "in loginuser")
       dispatch(handleLogIn(resp.user))
-      localStorage.setItem("token", resp.token)
+      localStorage.setItem("token", resp.jwt)
     })
   }
 }
@@ -34,7 +34,7 @@ export const signUpUser = (event) => {
     return signUp(event)
     .then(resp => {
       dispatch(handleSignUp(resp.user))
-      localStorage.setItem("token", resp.token)
+      localStorage.setItem("token", resp.jwt)
     })
   }
 }

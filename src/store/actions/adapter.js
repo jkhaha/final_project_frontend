@@ -1,6 +1,6 @@
 export const logIn = (event) => {
   console.log("in log in")
-  return fetch(`http://localhost:3001/users`, {
+  return fetch(`http://localhost:3001/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -1,24 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { loginUser } from '../store/actions/userActions'
+import { logInUser } from '../store/actions/userActions'
 
 class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log('handle submit inside')
-    this.props.loginUser(event)
+    console.log('inside handle Submit')
+    this.props.logInUser(event)
   }
 
   render(){
     return(
       <div>
-        <form onSubmit = {this.handleSubmit}>
+        <form className="ui form" onSubmit = {this.handleSubmit}>
           <h1>Login</h1>
-          <label>Username: <input type="text" name="username"/></label>
-          <label>Password: <input type="text" name="password"/></label>
-          <input type="Submit"/>
+          <div className="field">
+            <div className='ui left icon input'>
+              <i className="user icon">
+            </i>
+            <input type="text" name="username" placeholder="Username"/>
+            </div>
+          </div>
+
+          <div className="field">
+            <div className='ui left icon input'>
+              <i className="lock icon">
+            </i>
+              <input type="password" name="password" placeholder="Password"/>
+                </div>
+        </div>
+          <button className="ui button" type="Submit">Login</button>
         </form>
+
+        <div className="ui message">
+          New to us?
+          <a href="#"> Sign Up</a>
+        </div>
       </div>
     )
   }
@@ -26,11 +44,12 @@ class Login extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loginUser: (event) => dispatch(loginUser(event))
+    logInUser: (event) => dispatch(logInUser(event))
   }
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return { user: state.user}
 }
 

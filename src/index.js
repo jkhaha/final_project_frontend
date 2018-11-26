@@ -11,7 +11,7 @@ import userReducer from './store/reducers/userReducer'
 import habitReducer from './store/reducers/habitReducer'
 
 const rootReducer = combineReducers({
-  users: userReducer,
+  currentUser: userReducer,
   habits: habitReducer
 })
 

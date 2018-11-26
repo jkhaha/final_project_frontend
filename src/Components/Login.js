@@ -8,6 +8,7 @@ class Login extends Component {
     event.preventDefault()
     console.log('inside handle Submit')
     this.props.logInUser(event)
+    this.props.history.push('/dashboard')
   }
 
   render(){
@@ -35,7 +36,7 @@ class Login extends Component {
 
         <div className="ui message">
           New to us?
-          <a href="#"> Sign Up</a>
+          <a href="register"> Register Here</a>
         </div>
       </div>
     )

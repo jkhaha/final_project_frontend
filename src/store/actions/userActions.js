@@ -12,6 +12,7 @@ export const loginUser = (event) => {
   console.log(event)
   return (dispatch) => {
     return fetchForLogin(event)
-    .then(json => dispatch(handleLogin(json.user)))
+    .then(resp => dispatch(handleLogin(resp.user)))
+    .then(resp => localStorage.setItem("token", resp.token))
   }
 }

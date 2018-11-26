@@ -9,6 +9,7 @@ class Login extends Component {
     console.log('handle submit inside')
     this.props.loginUser(event)
   }
+
   render(){
     return(
       <div>
@@ -30,7 +31,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-  // return { user: state.user.auth.currentUser}
+  return { user: state.user}
 }
 
 

@@ -3,8 +3,6 @@ import './App.css';
 import DashboardContainer from './Components/DashboardContainer'
 import HabitShowContainer from './Components/HabitShowContainer'
 import Login from './Components/Login'
-import TestComponent from './Components/TestComponent'
-
 
 class App extends Component {
   render() {
@@ -13,7 +11,6 @@ class App extends Component {
       <Login/>
       <DashboardContainer/>
       <HabitShowContainer/>
-      <TestComponent/>
     </div>
     );
   }

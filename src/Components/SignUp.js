@@ -6,8 +6,8 @@ class SignUp extends Component {
 
   handleSignUp = (event) => {
     event.preventDefault()
-    console.log('inside handleSignUp')
     this.props.signUpUser(event)
+    this.props.history.push('/dashboard')
   }
 
   render(){

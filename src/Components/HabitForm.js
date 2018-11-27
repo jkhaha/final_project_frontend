@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { logInUser } from '../store/actions/userActions'
+import NavBar from './NavBar'
 
 class HabitForm extends Component {
 
@@ -26,6 +27,7 @@ class HabitForm extends Component {
   render(){
     return(
       <div>
+        <NavBar/>
         <form className="ui form" onSubmit = {this.handleSubmit}>
           <h1>HabitForm</h1>
           <div className="required field">

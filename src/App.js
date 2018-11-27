@@ -5,7 +5,6 @@ import DashboardContainer from './Components/DashboardContainer'
 import HabitShowContainer from './Components/HabitShowContainer'
 import Login from './Components/Login'
 import SignUp from './Components/SignUp'
-import NavBar from './Components/NavBar'
 import HabitForm from './Components/HabitForm'
 
 class App extends Component {
@@ -13,7 +12,6 @@ class App extends Component {
     return (
       <Router>
       <div>
-        <NavBar/>
       <Route path='/register' component={SignUp}/>
       <Route path='/login' component={Login}/>
       <Route path='/dashboard' component={DashboardContainer}/>

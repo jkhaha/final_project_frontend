@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDo from './ToDo'
 import HabitBoards from './HabitBoards'
+import NavBar from './NavBar'
 
 class DashboardContainer extends Component {
   functionForConsoleLog() {
@@ -10,6 +11,7 @@ class DashboardContainer extends Component {
     this.functionForConsoleLog()
     return(
       <div>
+      <NavBar/>
       <ToDo/>
       <HabitBoards/>
       </div>

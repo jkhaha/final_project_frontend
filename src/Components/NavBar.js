@@ -7,7 +7,7 @@ class Navbar extends Component {
 
   handleClick = (event) => {
     localStorage.removeItem("token")
-    this.props.logoutUser(event)
+    // this.props.logoutUser(event)
   }
 
   render(){

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { logInUser } from '../store/actions/userActions'
+import { createNewHabit } from '../store/actions/habitActions'
 import NavBar from './NavBar'
 
 class HabitForm extends Component {
@@ -13,6 +13,7 @@ class HabitForm extends Component {
   }
 
   handleChange = (event) => {
+    console.log(event.target.value)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -21,7 +22,7 @@ class HabitForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     console.log('inside handle Submit')
-    this.props.logInUser(event)
+    this.props.createNewHabit(event)
   }
 
   render(){
@@ -51,7 +52,7 @@ class HabitForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logInUser: (event) => dispatch(logInUser(event))
+    createNewHabit: (event) => dispatch(createNewHabit(event))
   }
 }
 

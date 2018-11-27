@@ -23,7 +23,6 @@ export const logInUser = (event) => {
   return (dispatch) => {
     return logIn(event)
     .then(resp => {
-      console.log(resp, "in loginuser")
       dispatch(handleLogIn(resp.user))
       localStorage.setItem("token", resp.jwt)
     })

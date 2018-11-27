@@ -40,7 +40,6 @@ export const signUp = (event) => {
 
 // start with this tomorrow
   export const createHabit = (event) => {
-    console.log("in adapter createHabit")
       return fetch("http://localhost:3001/habits", {
         method: "POST",
         headers: {

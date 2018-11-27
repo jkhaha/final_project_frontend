@@ -7,14 +7,7 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.logInUser(event)
-  //   if (localStorage.token !== undefined ) {
-  //   this.props.history.push('/dashboard')
-  // } else {
-  //   console.log("NO TOKEN")
-  //   this.props.history.push('/login')
-  // }
-
-    //want to get it to not work if username is blank
+    this.props.history.push('/dashboard')
   }
 
   render(){

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import DashboardContainer from './Components/DashboardContainer'
 import HabitShowContainer from './Components/HabitShowContainer'
 import Login from './Components/Login'

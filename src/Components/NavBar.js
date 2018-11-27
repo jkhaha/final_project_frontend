@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from "react-router-dom"
 import { logoutUser } from '../store/actions/userActions'
 
 class Navbar extends Component {
@@ -30,7 +29,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return { user: state.user}
 }
 

@@ -8,8 +8,8 @@ class HabitForm extends Component {
   state = {
     id: 0,
     description: '',
-     frequency: '',
-     start_date: ''
+    frequency: '',
+    start_date: ''
   }
 
   handleChange = (event) => {

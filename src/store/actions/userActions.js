@@ -1,5 +1,6 @@
 import { logIn } from './adapter.js'
 import { signUp } from './adapter.js'
+import { logOut } from './adapter.js'
 
 // action creators
 export const handleLogIn = (user) => ({
@@ -12,10 +13,13 @@ export const handleSignUp = (user) => ({
   payload: {user}
 })
 
+export const handleLogout = (user) => ({
+  type: 'LOG_OUT_USER',
+  payload: {}
+})
+
 // thunk creators
 export const logInUser = (event) => {
-  console.log('in login thunk creator')
-  console.log(event)
   return (dispatch) => {
     return logIn(event)
     .then(resp => {
@@ -26,15 +30,22 @@ export const logInUser = (event) => {
   }
 }
 
-
 export const signUpUser = (event) => {
-  console.log('in signIn thunk creator')
-  console.log(event)
   return (dispatch) => {
     return signUp(event)
     .then(resp => {
       dispatch(handleSignUp(resp.user))
       localStorage.setItem("token", resp.jwt)
+    })
+  }
+}
+
+export const logoutUser = (event) => {
+  console.log("in user actions logOut User")
+  return (dispatch) => {
+    return logOut(event)
+    .then(resp => {
+      dispatch(handleLogout(resp.user))
     })
   }
 }

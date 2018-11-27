@@ -33,6 +33,10 @@ export const signUp = (event) => {
       .then(resp => resp.json())
   };
 
+  export const logOut = (event) => {
+    console.log("in adapter logOut")
+  };
+
 
 // start with this tomorrow
   export const createHabit = (event) => {

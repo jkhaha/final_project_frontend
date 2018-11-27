@@ -13,9 +13,11 @@ class Login extends Component {
 
   render(){
     return(
-      <div>
-        <form className="ui form" onSubmit = {this.handleSubmit}>
+      <div className="ui middle aligned center aligned grid">
+        <div className="column">
+        <form className="ui large form" onSubmit = {this.handleSubmit}>
           <h1>Login</h1>
+          <div className="ui stacked segment">
           <div className="field">
             <div className='ui left icon input'>
               <i className="user icon">
@@ -32,11 +34,13 @@ class Login extends Component {
                 </div>
         </div>
           <button className="ui button" type="Submit">Login</button>
+        </div>
         </form>
 
         <div className="ui message">
           New to us?
           <a href="register"> Register Here</a>
+        </div>
         </div>
       </div>
     )

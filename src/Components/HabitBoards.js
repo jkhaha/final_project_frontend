@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { loadHabits } from '../store/actions/habitActions'
 
 class HabitBoards extends Component {
 
-  fetchHabits() {
-    
+  componentDidMount(){
+    this.props.loadHabits()
   }
 
   render(){
@@ -17,10 +18,12 @@ class HabitBoards extends Component {
 // const mapStateToProps = (state) => {
 //   console.log(state)
 // }
-//
-// const mapDispatchToProps = (dispatch) => {
-//   console.log(dispatch)
-// }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadHabits: () => dispatch(loadHabits())
+  }
+}
 
 
-export default HabitBoards
+export default connect(null, mapDispatchToProps)(HabitBoards)

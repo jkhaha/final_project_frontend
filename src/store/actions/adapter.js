@@ -1,5 +1,4 @@
 export const logIn = (event) => {
-  console.log("in log in")
   return fetch(`http://localhost:3001/login`, {
     method: 'POST',
     headers: {
@@ -33,22 +32,29 @@ export const signUp = (event) => {
       .then(resp => resp.json())
   };
 
+  export const logOut = (event) => {
+    console.log("in adapter logOut")
+  };
+
 
 // start with this tomorrow
-  export const createHabit = (event) => {
-      return fetch("http://localhost:3001/habits", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          user: {
-            description: event.target.description.value,
-            frequency: event.target.frequency.value,
-            start_date: event.target.start_date.value
-          }
-        })
-      })
-        .then(resp => resp.json())
-    };
+  // export const createHabit = (event) => {
+  //     return fetch("http://localhost:3001/habits", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Accept": "application/json"
+  //       },
+  //       body: JSON.stringify({
+  //         user: {
+  //           description: event.target.description.value,
+  //           frequency: event.target.frequency.value,
+  //           start_date: event.target.start_date.value,
+  //           cue: event.target.cue.value,
+  //           routine: event.target.routine.value,
+  //           reward: event.target.reward.value
+  //         }
+  //       })
+  //     })
+  //       .then(resp => resp.json())
+  //   };

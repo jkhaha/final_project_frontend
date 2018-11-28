@@ -1,5 +1,6 @@
 const initialState = {
-  id: 0
+  id: 0,
+  username: ''
 }
 
 
@@ -8,7 +9,7 @@ const userReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case('LOG_IN'): {
-      return action.payload
+      return action.payload.user
     }
     default:
       return state;

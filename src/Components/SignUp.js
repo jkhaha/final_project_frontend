@@ -6,15 +6,17 @@ class SignUp extends Component {
 
   handleSignUp = (event) => {
     event.preventDefault()
-    console.log('inside handleSignUp')
     this.props.signUpUser(event)
+    this.props.history.push('/dashboard')
   }
 
   render(){
     return(
-      <div>
-        <form className="ui form" onSubmit = {this.handleSignUp}>
+      <div className="ui middle aligned center aligned grid">
+        <div className="column">
+        <form className="ui large form" onSubmit = {this.handleSignUp}>
           <h1>Register</h1>
+          <div className="ui stacked segment">
           <div className="field">
             <div className='ui left icon input'>
               <i className="user icon">
@@ -31,7 +33,9 @@ class SignUp extends Component {
                 </div>
         </div>
           <button className="ui button" type="Submit">Sign Up</button>
-        </form>
+          </div>
+      </form>
+      </div>
       </div>
     )
   }

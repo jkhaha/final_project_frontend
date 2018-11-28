@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { logoutUser } from '../store/actions/userActions'
 
 class Navbar extends Component {
@@ -14,9 +15,15 @@ class Navbar extends Component {
 
   return (
     <div className="ui three item menu">
-      <a href="habitform" className="item">Create A Habit</a>
-      <a href="dashboard" className="active item">Today's Habits</a>
-      <a href="login" className="item" onClick={this.handleClick}>Logout</a>
+      <a className= "item">
+        <Link to='/habitform'> Create A Habit </Link>
+      </a>
+      <a className="item">
+        <Link to='/dashboard'> Today's Habit </Link>
+      </a>
+      <a className="item">
+        <Link to='/login'> Logout </Link>
+      </a>
     </div>
   );
 }

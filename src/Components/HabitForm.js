@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+
 // import { createNewHabit } from '../store/actions/habitActions'
 import NavBar from './NavBar'
 
@@ -31,7 +32,7 @@ class HabitForm extends Component {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${localStorage.getItem('token')}`},
             body: JSON.stringify({habit: {
-                user_id: 4,
+                user_id: this.props.currentUserId,
                 description: event.target.description.value,
                 frequency: event.target.frequency.value,
                 start_date: event.target.start_date.value,
@@ -44,6 +45,7 @@ class HabitForm extends Component {
   }
 
   render(){
+    console.log(this.props.currentUserId, "this should be user id")
     return(
       <div>
         <NavBar/>
@@ -86,10 +88,11 @@ class HabitForm extends Component {
 //   }
 // }
 
-// const mapStateToProps = (state) => {
-//   console.log(state)
-//   return { habit: state.habit}
-// }
+const mapStateToProps = (state) => {
+  return {
+    currentUserId: state.currentUser.id
+  }
+}
 
 
-export default HabitForm
+export default connect(mapStateToProps)(HabitForm)

@@ -47,6 +47,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
+  console.log("dispatch", dispatch)
   return {
     logInUser: (event) => dispatch(logInUser(event))
   }

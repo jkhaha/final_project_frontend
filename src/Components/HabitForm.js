@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { createNewHabit } from '../store/actions/habitActions'
+// import { createNewHabit } from '../store/actions/habitActions'
 import NavBar from './NavBar'
 
 class HabitForm extends Component {
@@ -25,7 +25,22 @@ class HabitForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     console.log('inside handle Submit')
-    this.props.createNewHabit(event)
+    let options = {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('token')}`},
+            body: JSON.stringify({habit: {
+                user_id: 4,
+                description: event.target.description.value,
+                frequency: event.target.frequency.value,
+                start_date: event.target.start_date.value,
+                cue: event.target.cue.value,
+                routine: event.target.routine.value,
+                reward: event.target.reward.value
+            }})
+          }
+          fetch("http://localhost:3001/habits", options)
   }
 
   render(){
@@ -65,16 +80,16 @@ class HabitForm extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createNewHabit: (event) => dispatch(createNewHabit(event))
-  }
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     createNewHabit: (event) => dispatch(createNewHabit(event))
+//   }
+// }
 
-const mapStateToProps = (state) => {
-  console.log(state)
-  return { habit: state.habit}
-}
+// const mapStateToProps = (state) => {
+//   console.log(state)
+//   return { habit: state.habit}
+// }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(HabitForm)
+export default HabitForm

@@ -53,6 +53,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state, "in mapstate to props in login")
   return { user: state.user}
 }
 

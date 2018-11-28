@@ -9,7 +9,10 @@ class HabitForm extends Component {
     id: 0,
     description: '',
     frequency: '',
-    start_date: ''
+    start_date: '',
+    cue: '',
+    routine: '',
+    reward: ''
   }
 
   handleChange = (event) => {
@@ -43,6 +46,18 @@ class HabitForm extends Component {
           <label>Start Date</label>
             <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="Start Date"/>
           </div>
+          <div className=" field">
+          <label>Cue</label>
+            <input type="text" name="cue" value={this.state.cue} onChange={this.handleChange} placeholder="Cue"/>
+          </div>
+          <div className=" field">
+          <label>Routine</label>
+            <input type="text" name="routine" value={this.state.routine} onChange={this.handleChange} placeholder="Routine"/>
+          </div>
+          <div className=" field">
+          <label>Reward</label>
+            <input type="text" name="reward" value={this.state.reward} onChange={this.handleChange} placeholder="Reward"/>
+          </div>
           <button className="ui button" type="Submit">Create A Habit</button>
         </form>
       </div>
@@ -58,7 +73,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   console.log(state)
-  return { user: state.user}
+  return { habit: state.habit}
 }
 
 

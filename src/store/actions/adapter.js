@@ -50,7 +50,10 @@ export const signUp = (event) => {
           user: {
             description: event.target.description.value,
             frequency: event.target.frequency.value,
-            start_date: event.target.start_date.value
+            start_date: event.target.start_date.value,
+            cue: event.target.cue.value,
+            routine: event.target.routine.value,
+            reward: event.target.reward.value
           }
         })
       })

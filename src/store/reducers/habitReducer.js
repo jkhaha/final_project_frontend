@@ -6,6 +6,10 @@ const habitReducer = (state = initialState, action) => {
     case ('CREATE_HABIT'): {
       return [...state, action.payload]
     }
+    case ('FETCH_USER_HABITS'): {
+      // const userHabits = state.filter((habit) => {habit.user_id === action.payload})
+      // return userHabits
+    }
     default:
       return state;
   }

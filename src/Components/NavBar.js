@@ -15,15 +15,15 @@ class Navbar extends Component {
 
   return (
     <div className="ui three item menu">
-      <a className= "item">
+      <div className= "item">
         <Link to='/habitform'> Create A Habit </Link>
-      </a>
-      <a className="item">
-        <Link to='/dashboard'> Today's Habit </Link>
-      </a>
-      <a className="item">
+      </div>
+      <div className="item">
+        <Link to='/dashboard'> Dashboard </Link>
+      </div>
+      <div className="item">
         <Link to='/login'> Logout </Link>
-      </a>
+      </div>
     </div>
   );
 }

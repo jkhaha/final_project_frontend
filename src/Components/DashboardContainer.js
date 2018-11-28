@@ -7,11 +7,10 @@ import { connect } from 'react-redux'
 class DashboardContainer extends Component {
 
   render() {
-    console.log(this.props)
+
     return(
       <div>
       <NavBar/>
-
       <ToDo/>
       <HabitBoards/>
       </div>

@@ -45,7 +45,6 @@ class HabitForm extends Component {
   }
 
   render(){
-    console.log(this.props.currentUserId, "this should be user id")
     return(
       <div>
         <NavBar/>

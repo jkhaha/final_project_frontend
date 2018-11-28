@@ -23,7 +23,6 @@ export const logInUser = (event) => {
   return (dispatch) => {
     return logIn(event)
     .then(resp => {
-      console.log(resp, "in loginuser")
       dispatch(handleLogIn(resp.user))
       localStorage.setItem("token", resp.jwt)
     })
@@ -41,7 +40,6 @@ export const signUpUser = (event) => {
 }
 
 export const logoutUser = (event) => {
-  console.log("in user actions logOut User")
   return (dispatch) => {
     return logOut(event)
     .then(resp => {

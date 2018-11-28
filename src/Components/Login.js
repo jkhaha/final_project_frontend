@@ -47,14 +47,12 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("dispatch", dispatch)
   return {
     logInUser: (event) => dispatch(logInUser(event))
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state, "in mapstate to props in login")
   return { user: state.user}
 }
 

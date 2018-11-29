@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Calendar from './Calendar'
+import UserCalendar from './UserCalendar'
 import UserStats from './UserStats'
 
 class HabitShowContainer extends Component {
   render(){
     return(
       <div>
-        <Calendar/>
+        <UserCalendar/>
         <UserStats/>
       </div>
     )

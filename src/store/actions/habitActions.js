@@ -6,17 +6,9 @@ export const handleHabitSubmit = (habit) => ({
   payload: {habit}
 })
 
-const getHabits = (habits) => ({ type: 'FETCH_USER_HABITS', PAYLOAD: habits})
+export const getHabits = (habits) => ({ type: 'FETCH_USER_HABITS', payload: habits})
 
 // thunk creators
-// export const createNewHabit = (event) => {
-//   return (dispatch) => {
-//     return createHabit(event)
-//     .then(resp => dispatch(handleHabitSubmit(resp))
-//     )
-//   }
-// }
-
 export const loadHabits = (event) => {
   return (dispatch) => {
     return fetch('http://localhost:3001/habits')

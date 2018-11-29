@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ToDo extends Component {
   render(){
     return(
-      <h6>This is the to do list (in dashboard)</h6>
+      <h6>TO DO LIST</h6>
     )
   }
 }

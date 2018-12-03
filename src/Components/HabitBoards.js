@@ -10,7 +10,6 @@ class HabitBoards extends Component {
   }
 
   render(){
-    console.log(this.props.habits[0], "what are habit props");
   let habitsToRender = this.props.habits.map(habitObj => <HabitCard key={habitObj.id} habit={habitObj}/>)
     return(
       <div className="ui three column grid">

@@ -24,14 +24,13 @@ class HabitForm extends Component {
     routine: '',
     reward: ''
   }
-
-  handleCalendarChange = (date) => {
-    // const valueOfInput =  date.format("MMM Do YY");
-    console.log(date.format("MMM Do YY"))
-    this.setState({
-     startDate: date
-   });
- }
+ //
+ //  handleCalendarChange = (date) => {
+ //    // const valueOfInput =  date.format("MMM Do YY");
+ //    this.setState({
+ //     startDate: date
+ //   });
+ // }
 
   handleChange = (event) => {
     console.log(event.target.value)
@@ -52,7 +51,7 @@ class HabitForm extends Component {
                 user_id: this.props.currentUserId,
                 description: event.target.description.value,
                 frequency: event.target.frequency.value,
-                // start_date: event,
+                start_date: event.target.start_date.value,
                 cue: event.target.cue.value,
                 routine: event.target.routine.value,
                 reward: event.target.reward.value
@@ -77,12 +76,10 @@ class HabitForm extends Component {
             <input type="text" name="frequency" value={this.state.frequency} onChange={this.handleChange} placeholder="daily? every three days?"/>
           </div>
 
-
-          <div className="required field">
+          <div className=" field">
           <label>Start Date</label>
-          <DatePicker name="start_date" dateFormat="MM/DD/YYYY" selected={this.state.startDate} onChange={this.handleCalendarChange}/>
+            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="start date"/>
           </div>
-
 
           <div className=" field">
           <label>Cue</label>

@@ -5,16 +5,12 @@ import { getSingleHabit } from '../store/actions/habitActions'
 
 class HabitCard extends Component {
 
-  handleClick = () => {
-    console.log(this.props);
-  }
-
   render(){
   return (
     <div className="ui three column grid">
       <div className="column">
         <Link to='/habits'>
-          <div className="ui fluid card" onClick={this.handleClick}>
+          <div className="ui fluid card"  onClick={() => this.props.getSingleHabit(this.props.habit)}>
             <div className="image">
               <img src=""/>
             </div>
@@ -28,11 +24,11 @@ class HabitCard extends Component {
 }
 
 // const mapStateToProps = (state, ownProps) => {
-//   return { selected: ownProps.hobbit.id === state.hobbits.selectedHobbit.id }
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-//   return { selectHobbit: (hobbit) => dispatch(selectHobbit(hobbit)) }
+//   return { selectedHabit: ownProps.habit.id === state.habits.selectedHabit.id }
 // }
 
-export default HabitCard
+const mapDispatchToProps = (dispatch) => {
+  return { getSingleHabit: (habit) => dispatch(getSingleHabit(habit)) }
+}
+
+export default connect(null, mapDispatchToProps)(HabitCard)

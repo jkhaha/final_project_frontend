@@ -21,7 +21,7 @@ export const loadHabits = (event) => {
 }
 
 export const loadHabit = (event) => {
-  console.log(event)
+  console.log("habitActions", event)
   return (dispatch) => {
     return fetch('http://localhost:3001/habits')
     .then(res => res.json())

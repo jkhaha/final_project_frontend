@@ -13,6 +13,9 @@ const habitReducer = (state = initialState, action) => {
       // const userHabits = state.filter((habit) => {habit.user_id === action.payload})
       return {...state, habits: action.payload}
     }
+    case('FETCH_CHOSEN_HABIT'): {
+      return {...state, selectedHabit: action.payload}
+    }
     default:
       return state;
   }

@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-
+import { Link } from 'react-router-dom'
+import { getSingleHabit } from '../store/actions/habitActions'
 
 class HabitCard extends Component {
+
+  handleClick = () => {
+    console.log(this.props);
+  }
+
   render(){
-    console.log(this.props)
   return (
     <div className="ui three column grid">
-    <div className="column">
-      <div className="ui fluid card">
-      <div className="image">
-      <img src=""/>
+      <div className="column">
+        <Link to='/habits'>
+          <div className="ui fluid card" onClick={this.handleClick}>
+            <div className="image">
+              <img src=""/>
+            </div>
+            <div>ID: {this.props.habit.id} </div>
+          </div>
+        </Link>
       </div>
-      <div>ID: {this.props.habit.id} </div>
-    </div>
-    </div>
     </div>
   );
 }

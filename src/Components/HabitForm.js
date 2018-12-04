@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import DatePicker from "react-datepicker";
+import { moment } from 'moment'
 
-// import { createNewHabit } from '../store/actions/habitActions'
+import "react-datepicker/dist/react-datepicker.css";
 import NavBar from './NavBar'
 
 class HabitForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: new Date()
+    };
+    // this.handleCalendarChange = this.handleCalendarChange.bind(this);
+  }
 
   state = {
     id: 0,
@@ -15,6 +24,13 @@ class HabitForm extends Component {
     routine: '',
     reward: ''
   }
+ //
+ //  handleCalendarChange = (date) => {
+ //    // const valueOfInput =  date.format("MMM Do YY");
+ //    this.setState({
+ //     startDate: date
+ //   });
+ // }
 
   handleChange = (event) => {
     console.log(event.target.value)
@@ -59,10 +75,12 @@ class HabitForm extends Component {
           <label>Habit Frequency</label>
             <input type="text" name="frequency" value={this.state.frequency} onChange={this.handleChange} placeholder="daily? every three days?"/>
           </div>
-          <div className="required field">
+
+          <div className=" field">
           <label>Start Date</label>
-            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="Start Date"/>
+            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="MM/DD/YYYY"/>
           </div>
+
           <div className=" field">
           <label>Cue</label>
             <input type="text" name="cue" value={this.state.cue} onChange={this.handleChange} placeholder="Cue"/>

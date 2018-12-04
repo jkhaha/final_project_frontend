@@ -30,7 +30,7 @@ class App extends Component {
       <Route path='/register' component={SignUp}/>
       <Route path='/login' component={Login}/>
       <Route path='/dashboard' component={DashboardContainer}/>
-      <Route path='/habitboards' component={HabitShowContainer}/>
+      <Route path='/habits' component={HabitShowContainer}/>
       <Route path='/habitform' component={HabitForm}/>
     </div>
   </Router>

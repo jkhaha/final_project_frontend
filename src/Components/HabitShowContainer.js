@@ -4,6 +4,7 @@ import UserStats from './UserStats'
 import { loadHabit } from '../store/actions/habitActions'
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
+import { Link } from 'react-router-dom'
 
 class HabitShowContainer extends Component {
   handleDelete=(event) => {
@@ -17,11 +18,14 @@ class HabitShowContainer extends Component {
     }
       fetch(`http://localhost:3001/habits/${this.props.selectedHabit.id}`, options)
   }
+
   render(){
     return(
       <div>
         <NavBar/>
-        <button className="ui button" type="Submit" onClick={(event)=> this.handleDelete(event)}>Delete Habit</button>
+        <Link to='/dashboard'>
+          <button className="ui button" type="Submit" onClick={(event)=> this.handleDelete(event)}>Delete Habit</button>
+        </Link>
         <h3>Description: {this.props.selectedHabit.description}</h3>
         <h3>Frequency: {this.props.selectedHabit.frequency}</h3>
         <h3>Start Date: {this.props.selectedHabit.start_date}</h3>

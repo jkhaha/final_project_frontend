@@ -78,7 +78,7 @@ class HabitForm extends Component {
 
           <div className=" field">
           <label>Start Date</label>
-            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="start date"/>
+            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="MM/DD/YYYY"/>
           </div>
 
           <div className=" field">

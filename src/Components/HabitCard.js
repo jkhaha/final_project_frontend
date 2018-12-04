@@ -12,9 +12,9 @@ class HabitCard extends Component {
         <Link to='/habits'>
           <div className="ui fluid card"  onClick={() => this.props.getSingleHabit(this.props.habit)}>
             <div className="image">
-              <img src=""/>
+              <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80"/>
             </div>
-            <div>ID: {this.props.habit.id} </div>
+            <div>{this.props.habit.description} </div>
           </div>
         </Link>
       </div>

@@ -20,6 +20,7 @@ class HabitShowContainer extends Component {
   }
 
   render(){
+    console.log(this.props.selectedHabit.start_date);
     return(
       <div>
         <NavBar/>

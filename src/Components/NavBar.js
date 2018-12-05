@@ -16,7 +16,7 @@ class Navbar extends Component {
   return (
     <div className="ui four item menu" id="navbar">
       <div className= "header item">
-      THE COMPOUND EFFECT
+        <Link to='/about_us'>THE COMPOUND EFFECT</Link>
       </div>
       <div className= "item">
         <Link to='/habitform'> CREATE A HABIT </Link>

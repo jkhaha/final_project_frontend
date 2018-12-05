@@ -11,7 +11,7 @@ class SignUp extends Component {
         if (r === "ERROR") {
           return console.log("hit error");
         }
-        this.props.history.push('/dashboard')
+        this.props.history.push('/about_us')
       })
   }
 
@@ -19,7 +19,7 @@ class SignUp extends Component {
     return(
       <div>
         <h1 id="logo">The Compound Effect</h1>
-
+        <p id="register_here"> the power of small, daily steps</p>
         <form className="ui form" id="signup_div" onSubmit = {this.handleSignUp}>
           <h1 id="header">Register</h1>
 

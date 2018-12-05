@@ -12,7 +12,7 @@ class Login extends Component {
       if (r === "ERROR") {
         return console.log("hit error");
       }
-      this.props.history.push('/dashboard')
+      this.props.history.push('/about_us')
     })
   }
 
@@ -20,6 +20,7 @@ class Login extends Component {
     return(
       <div>
         <h1 id="logo">The Compound Effect</h1>
+          <p id="register_here"> the power of small, daily steps</p>
         <form className="ui form" onSubmit = {this.handleSubmit} id="login_div">
           <h1 id="header">Login</h1>
 

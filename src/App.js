@@ -7,6 +7,7 @@ import Login from './Components/Login'
 import SignUp from './Components/SignUp'
 import HabitForm from './Components/HabitForm'
 import EditForm from './Components/EditForm'
+import Explanation from './Components/Explanation'
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
       <Route path='/habits' component={HabitShowContainer}/>
       <Route path='/habitform' component={HabitForm}/>
       <Route path='/editform' component={EditForm}/>
+      <Route path='/about_us' component={Explanation}/>
     </div>
   </Router>
     );

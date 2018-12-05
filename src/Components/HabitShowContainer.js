@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
-// import EntriesComponent from './EntriesComponent'
+import EntriesComponent from './EntriesComponent'
 import { Link } from 'react-router-dom'
 import { loadEntries } from '../store/actions/entryActions'
 
@@ -39,10 +39,11 @@ class HabitShowContainer extends Component {
   }
 
   render(){
+    let entriesToRender = this.props.entries.map(entryObj => <EntriesComponent key={entryObj.id} entry={entryObj}/>)
     return(
       <div>
         <NavBar/>
-        <div id="habit_description">
+        <div id="habit_description" className="split left">
         <p id="habit_header"><b>The Habit:</b> {this.props.selectedHabit.description}</p>
         <p><b>Frequency:</b> {this.props.selectedHabit.frequency}</p>
         <p><b>Start Date:</b> {this.props.selectedHabit.start_date}</p>
@@ -63,6 +64,11 @@ class HabitShowContainer extends Component {
           <button className="ui button" type="Submit" onClick={(event)=> this.handleCreate(event)}>Create Habit Checklist</button>
         </p>
       </div>
+      <div className="split right">
+
+          {entriesToRender}
+
+      </div>
 
       </div>
     )
@@ -70,7 +76,6 @@ class HabitShowContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log("habit show container state", state.entries.entries);
   return {
     selectedHabit: state.habits.selectedHabit,
     entries: state.entries.entries

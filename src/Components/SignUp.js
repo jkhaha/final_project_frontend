@@ -7,7 +7,12 @@ class SignUp extends Component {
   handleSignUp = (event) => {
     event.preventDefault()
     this.props.signUpUser(event)
-    this.props.history.push('/dashboard')
+      .then(r => {
+        if (r === "ERROR") {
+          return console.log("hit error");
+        }
+        this.props.history.push('/dashboard')
+      })
   }
 
   render(){

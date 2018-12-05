@@ -104,17 +104,11 @@ class HabitForm extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     createNewHabit: (event) => dispatch(createNewHabit(event))
-//   }
-// }
-
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     currentUserId: state.currentUser.id
   }
 }
-
 
 export default connect(mapStateToProps)(HabitForm)

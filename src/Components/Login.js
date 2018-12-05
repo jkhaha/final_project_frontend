@@ -8,7 +8,12 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.logInUser(event)
-    this.props.history.push('/dashboard')
+    .then(r => {
+      if (r === "ERROR") {
+        return console.log("hit error");
+      }
+      this.props.history.push('/dashboard')
+    })
   }
 
   render(){

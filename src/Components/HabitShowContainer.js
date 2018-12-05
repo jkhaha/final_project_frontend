@@ -19,6 +19,23 @@ class HabitShowContainer extends Component {
       fetch(`http://localhost:3001/habits/${this.props.selectedHabit.id}`, options)
   }
 
+  handleCreate=(event) => {
+    event.preventDefault()
+    console.log(this.props.selectedHabit.id);
+    let options = {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('token')}`},
+            body: JSON.stringify({entry: {
+                habit_id: this.props.selectedHabit.id,
+                completed_status: false,
+                date_time: ''
+            }})
+          }
+          fetch("http://localhost:3001/entries", options)
+  }
+
   render(){
     return(
       <div>
@@ -39,6 +56,9 @@ class HabitShowContainer extends Component {
           <Link to="/editform">
             <button className="ui button" type="Submit">Edit Habit</button>
           </Link>
+        </p>
+        <p>
+          <button className="ui button" type="Submit" onClick={(event)=> this.handleCreate(event)}>Create Habit Checklist</button>
         </p>
       </div>
       </div>

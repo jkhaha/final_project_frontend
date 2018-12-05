@@ -23,6 +23,9 @@ export const logInUser = (event) => {
   return (dispatch) => {
     return logIn(event)
     .then(resp => {
+      if (resp.error) {
+        return "ERROR"
+      }
       dispatch(handleLogIn(resp.user))
       localStorage.setItem("token", resp.jwt)
     })
@@ -33,6 +36,9 @@ export const signUpUser = (event) => {
   return (dispatch) => {
     return signUp(event)
     .then(resp => {
+      if (resp.error) {
+        return "ERROR"
+      }
       dispatch(handleSignUp(resp.user))
       localStorage.setItem("token", resp.jwt)
     })

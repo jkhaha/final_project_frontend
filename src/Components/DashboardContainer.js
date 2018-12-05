@@ -11,19 +11,9 @@ class DashboardContainer extends Component {
     return(
       <div>
       <NavBar/>
-      <div className="ui segment">
-        <div className="ui two column very relaxed grid">
-          <div className="column">
-            <ToDo/>
-          </div>
-          <div className="column">
-            <HabitBoards/>
-          </div>
+        <div id="dashboard">
+          <HabitBoards/>
         </div>
-          <div className="ui vertical divider">
-            AND
-          </div>
-      </div>
       </div>
     )
   }

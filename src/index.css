@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 body {
   margin: 0;
   padding: 0;
@@ -6,9 +7,42 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.unsplash.com/photo-1496517463163-3550265405c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
+  background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#login_div, #signup_div, #habit_form, #dashboard {
+  margin: 25px 50px 75px;
+}
+
+#logo {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 40px;
+  margin: 25px;
+}
+
+#register_here{
+  text-align: center;
+}
+
+#header{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+#navbar{
+  background-color: rgba(255,255,255,0.5);
+}
+
+#habit_description{
+    margin: 25px 50px 75px;
 }

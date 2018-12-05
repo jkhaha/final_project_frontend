@@ -12,20 +12,22 @@ class SignUp extends Component {
 
   render(){
     return(
-      <div className="ui middle aligned center aligned grid">
-        <div className="column">
-        <form className="ui large form" onSubmit = {this.handleSignUp}>
-          <h1>Register</h1>
-          <div className="ui stacked segment">
+      <div>
+        <h1 id="logo">The Compound Effect</h1>
+
+        <form className="ui form" id="signup_div" onSubmit = {this.handleSignUp}>
+          <h1 id="header">Register</h1>
+
           <div className="field">
+              <label></label>
             <div className='ui left icon input'>
               <i className="user icon">
             </i>
             <input type="text" name="username" placeholder="Username"/>
             </div>
-          </div>
 
           <div className="field">
+              <label></label>
             <div className='ui left icon input'>
               <i className="lock icon">
             </i>
@@ -36,7 +38,7 @@ class SignUp extends Component {
           </div>
       </form>
       </div>
-      </div>
+
     )
   }
 }

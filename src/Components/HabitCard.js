@@ -7,7 +7,7 @@ class HabitCard extends Component {
 
   render(){
   return (
-    <div className="ui three column grid">
+    <div className="ui one column grid">
       <div className="column">
         <Link to='/habits'>
           <div className="ui fluid card"  onClick={() => this.props.getSingleHabit(this.props.habit)} id="habit_card">

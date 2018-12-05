@@ -11,6 +11,9 @@ const userReducer = (state = initialState, action) => {
     case('LOG_IN'): {
       return action.payload.user
     }
+    case('SIGN_UP_NEW_USER'): {
+      return action.payload.user
+    }
     default:
       return state;
   }

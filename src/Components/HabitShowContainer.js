@@ -21,7 +21,7 @@ class HabitShowContainer extends Component {
 
   handleCreate=(event) => {
     event.preventDefault()
-    console.log(this.props.selectedHabit.id);
+    console.log(this.props.selectedHabit);
     let options = {
             method: "POST",
             headers: {
@@ -33,7 +33,7 @@ class HabitShowContainer extends Component {
                 date_time: ''
             }})
           }
-          fetch("http://localhost:3001/entries", options)
+            fetch("http://localhost:3001/entries", options)
   }
 
   render(){

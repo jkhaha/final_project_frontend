@@ -14,7 +14,7 @@ class HabitCard extends Component {
             <div className="image">
               <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80"/>
             </div>
-            <div>{this.props.habit.description} </div>
+            <div id="habit_card_desc">{this.props.habit.description} </div>
           </div>
         </Link>
       </div>

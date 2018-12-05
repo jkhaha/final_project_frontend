@@ -13,7 +13,6 @@ class HabitForm extends Component {
     this.state = {
       startDate: new Date()
     };
-    // this.handleCalendarChange = this.handleCalendarChange.bind(this);
   }
 
   state = {
@@ -25,13 +24,7 @@ class HabitForm extends Component {
     routine: '',
     reward: ''
   }
- //
- //  handleCalendarChange = (date) => {
- //    // const valueOfInput =  date.format("MMM Do YY");
- //    this.setState({
- //     startDate: date
- //   });
- // }
+
 
   handleChange = (event) => {
     console.log(event.target.value)
@@ -67,7 +60,7 @@ class HabitForm extends Component {
         <NavBar/>
         <div id="habit_form">
         <form className="ui form" onSubmit = {this.handleSubmit} >
-          <h1>HabitForm</h1>
+          <h1>Habit Form</h1>
           <div className="required field">
             <label>Habit Description</label>
             <input type="text" name="description" value={this.state.description} onChange={this.handleChange} placeholder="ex. workout for 30 minutes a day"/>

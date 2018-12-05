@@ -46,3 +46,20 @@ code {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
+
+#your_habits{
+  margin: 25px 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+#habit_card_desc{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+#habit_header{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}

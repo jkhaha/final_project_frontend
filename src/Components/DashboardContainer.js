@@ -11,6 +11,7 @@ class DashboardContainer extends Component {
     return(
       <div>
       <NavBar/>
+      <h1 id="your_habits">Your Habits:</h1>
         <div id="dashboard">
           <HabitBoards/>
         </div>

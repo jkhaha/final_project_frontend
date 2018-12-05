@@ -17,6 +17,7 @@ const habitReducer = (state = initialState, action) => {
       return {...state, selectedHabit: action.payload}
     }
     case('EDIT_HABIT'): {
+      console.log(action.payload);
       return {...state, selectedHabit: action.payload}
     }
     default:

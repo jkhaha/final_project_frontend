@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import DatePicker from "react-datepicker";
 import { moment } from 'moment'
+import { Link } from 'react-router-dom'
 
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from './NavBar'
@@ -61,7 +62,6 @@ class HabitForm extends Component {
   }
 
   render(){
-    console.log(this.props.currentUserId);
     return(
       <div>
         <NavBar/>
@@ -94,7 +94,9 @@ class HabitForm extends Component {
           <label>Reward</label>
             <input type="text" name="reward" value={this.state.reward} onChange={this.handleChange} placeholder="ex. smoothie post workout!"/>
           </div>
-          <button className="ui button" type="Submit">Create A Habit</button>
+
+            <button className="ui button" type="Submit">Create A Habit</button>
+
         </form>
         </div>
       </div>

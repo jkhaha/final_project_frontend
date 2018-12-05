@@ -23,7 +23,7 @@ class EditForm extends Component {
   }
 
   componentDidUpdate (prevState, prevProps) {
-    console.log("props", this.props.selectedHabit);
+    console.log("prevProps", prevProps);
     if (prevProps.id !== this.props.selectedHabit.id) {
       this.setState({
         id: this.props.selectedHabit.id,
@@ -39,6 +39,7 @@ class EditForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    console.log("state", this.state);
     this.props.editHabit(this.state)
   }
 
@@ -49,7 +50,7 @@ console.log(this.props.selectedHabit);
       <div>
       <NavBar/>
         <div id="habit_form">
-        <form className="ui form" onSubmit = {this.handleSubmit} >
+        <form className="ui form" onSubmit={this.handleSubmit} >
           <h1>HabitForm</h1>
           <div className="required field">
             <label>Habit Description</label>
@@ -77,9 +78,9 @@ console.log(this.props.selectedHabit);
           <label>Reward</label>
             <input type="text" name="reward" value={this.state.reward} onChange={this.handleChange} placeholder={this.props.selectedHabit.reward}/>
           </div>
-          <Link to="/dashboard">
+
           <button className="ui button" type="Submit">Edit This Habit</button>
-          </Link>
+
         </form>
 
         </div>

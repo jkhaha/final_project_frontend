@@ -13,6 +13,7 @@ export const getSingleHabit = (habit) => ({ type: 'FETCH_CHOSEN_HABIT', payload:
 export const editHabit = (habit) => ({ type: 'EDIT_HABIT', payload: habit})
 
 // thunk creators
+
 export const loadHabits = (event) => {
   return (dispatch) => {
     return fetch('http://localhost:3001/habits')

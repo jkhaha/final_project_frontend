@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { updateHabit } from '../store/actions/habitActions'
-import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 
 class EditForm extends Component {

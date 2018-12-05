@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { loadHabit } from '../store/actions/habitActions'
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
+// import EntriesComponent from './EntriesComponent'
 import { Link } from 'react-router-dom'
+import { loadEntries } from '../store/actions/entryActions'
 
 class HabitShowContainer extends Component {
+
+  componentDidMount(){
+    this.props.loadEntries()
+  }
 
   handleDelete=(event) => {
     let options = {
@@ -19,7 +24,6 @@ class HabitShowContainer extends Component {
 
   handleCreate=(event) => {
     event.preventDefault()
-    console.log(this.props.selectedHabit);
     let options = {
             method: "POST",
             headers: {
@@ -59,15 +63,24 @@ class HabitShowContainer extends Component {
           <button className="ui button" type="Submit" onClick={(event)=> this.handleCreate(event)}>Create Habit Checklist</button>
         </p>
       </div>
+
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
+  // console.log("habit show container state", state.entries.entries);
   return {
-    selectedHabit: state.habits.selectedHabit
+    selectedHabit: state.habits.selectedHabit,
+    entries: state.entries.entries
   }
 }
 
-export default connect(mapStateToProps)(HabitShowContainer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadEntries: () => dispatch(loadEntries())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HabitShowContainer);

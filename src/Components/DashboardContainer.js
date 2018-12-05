@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ToDo from './ToDo'
 import HabitBoards from './HabitBoards'
 import NavBar from './NavBar'
 import { connect } from 'react-redux'

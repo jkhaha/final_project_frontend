@@ -20,8 +20,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    loadEntries: () => dispatch(loadEntries())
-  }
-export default EntriesComponent;
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     loadEntries: () => dispatch(loadEntries())
+//   }
+// }
+
+export default connect(mapStateToProps)(EntriesComponent)

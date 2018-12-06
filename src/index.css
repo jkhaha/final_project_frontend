@@ -93,4 +93,9 @@ code {
 
 #explanation{
   margin: 40px 50px 75px;
+  text-align: center
+}
+
+#explanation_tag{
+  font-size: 18px;
 }

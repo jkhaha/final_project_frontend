@@ -1,14 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.unsplash.com/photo-1496517463163-3550265405c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
+  background-attachment: fixed;
+  background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#login_div, #signup_div, #habit_form, #dashboard {
+  margin: 25px 50px 75px;
+}
+
+#logo {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: 40px;
+  margin: 25px;
+}
+
+#register_here{
+  text-align: center;
+}
+
+#header{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+#navbar{
+  background-color: rgba(255,255,255,0.5);
+}
+
+#habit_description{
+    margin: 25px 50px 75px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+#your_habits{
+  margin: 25px 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+#habit_card_desc{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+#habit_header{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}
+
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  margin: 40px 50px 75px;
+  padding-left: 100px;
+}
+
+#ui_checkbox{
+  padding: 10px;
+}
+
+#explanation{
+  margin: 40px 50px 75px;
+  text-align: center
+}
+
+#explanation_tag{
+  font-size: 18px;
 }

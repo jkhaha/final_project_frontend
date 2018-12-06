@@ -14,15 +14,18 @@ class Navbar extends Component {
   render(){
 
   return (
-    <div className="ui three item menu">
+    <div className="ui four item menu" id="navbar">
+      <div className= "header item">
+        <Link to='/about_us'>THE COMPOUND EFFECT</Link>
+      </div>
       <div className= "item">
-        <Link to='/habitform'> Create A Habit </Link>
+        <Link to='/habitform'> CREATE A HABIT </Link>
       </div>
       <div className="item">
-        <Link to='/dashboard'> Dashboard </Link>
+        <Link to='/dashboard'> DASHBOARD </Link>
       </div>
       <div className="item">
-        <Link to='/login'> Logout </Link>
+        <Link to='/login'> LOGOUT </Link>
       </div>
     </div>
   );

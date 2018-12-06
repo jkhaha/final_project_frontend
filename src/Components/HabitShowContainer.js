@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import UserCalendar from './UserCalendar'
-import UserStats from './UserStats'
-import { loadHabit } from '../store/actions/habitActions'
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
+import EntriesComponent from './EntriesComponent'
 import { Link } from 'react-router-dom'
+import { loadEntries } from '../store/actions/entryActions'
 
 class HabitShowContainer extends Component {
+
+  componentDidMount(){
+    this.props.loadEntries()
+  }
+
   handleDelete=(event) => {
-    console.log('inside handle delete')
     let options = {
       method: "DELETE",
       headers: {
@@ -19,30 +22,70 @@ class HabitShowContainer extends Component {
       fetch(`http://localhost:3001/habits/${this.props.selectedHabit.id}`, options)
   }
 
+  handleCreate=(event) => {
+    event.preventDefault()
+    let options = {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('token')}`},
+            body: JSON.stringify({entry: {
+                habit_id: this.props.selectedHabit.id,
+                completed_status: false,
+                date_time: ''
+            }})
+          }
+            fetch("http://localhost:3001/entries", options)
+  }
+
   render(){
-    console.log(this.props.selectedHabit.start_date);
+    let entriesToRender = this.props.entries.map(entryObj => <EntriesComponent key={entryObj.id} entry={entryObj}/>)
     return(
       <div>
         <NavBar/>
-        <Link to='/dashboard'>
-          <button className="ui button" type="Submit" onClick={(event)=> this.handleDelete(event)}>Delete Habit</button>
-        </Link>
-        <h3>Description: {this.props.selectedHabit.description}</h3>
-        <h3>Frequency: {this.props.selectedHabit.frequency}</h3>
-        <h3>Start Date: {this.props.selectedHabit.start_date}</h3>
-        <h3>Cue: {this.props.selectedHabit.cue}</h3>
-        <h3>Routine: {this.props.selectedHabit.routine}</h3>
-        <h3>Reward: {this.props.selectedHabit.reward}</h3>
+        <div id="habit_description" className="split left">
+        <p id="habit_header"><b>The Habit:</b> {this.props.selectedHabit.description}</p>
+        <p><b>Frequency:</b> {this.props.selectedHabit.frequency}</p>
+        <p><b>Start Date:</b> {this.props.selectedHabit.start_date}</p>
+        <p><b>Cue:</b> {this.props.selectedHabit.cue}</p>
+        <p><b>Routine:</b> {this.props.selectedHabit.routine}</p>
+        <p><b>Reward:</b> {this.props.selectedHabit.reward}</p>
+        <p>
+          <Link to="/editform">
+            <button className="ui button" type="Submit">Edit Habit</button>
+          </Link>
+        </p>
+        <p>
+          <Link to="/dashboard">
+            <button className="ui button" type="Submit" onClick={(event)=> this.handleDelete(event)}>Delete Habit</button>
+          </Link>
+        </p>
+        <p>
+          <button className="ui button" type="Submit" onClick={(event)=> this.handleCreate(event)}>Create Habit Checklist</button>
+        </p>
+      </div>
+      <div className="split right">
+
+          {entriesToRender}
+
+      </div>
+
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    selectedHabit: state.habits.selectedHabit
+    selectedHabit: state.habits.selectedHabit,
+    entries: state.entries.entries
   }
 }
 
-export default connect(mapStateToProps)(HabitShowContainer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadEntries: () => dispatch(loadEntries())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HabitShowContainer);

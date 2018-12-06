@@ -2,8 +2,7 @@ const initialState = {
   habits: [],
   selectedHabit: {}
 }
-// state will always be array of habits
-// don't have access to current user
+
 const habitReducer = (state = initialState, action) => {
   switch (action.type) {
     case ('CREATE_HABIT'): {
@@ -14,6 +13,9 @@ const habitReducer = (state = initialState, action) => {
       return {...state, habits: action.payload}
     }
     case('FETCH_CHOSEN_HABIT'): {
+      return {...state, selectedHabit: action.payload}
+    }
+    case('EDIT_HABIT'): {
       return {...state, selectedHabit: action.payload}
     }
     default:

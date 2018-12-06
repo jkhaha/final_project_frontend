@@ -7,25 +7,32 @@ class SignUp extends Component {
   handleSignUp = (event) => {
     event.preventDefault()
     this.props.signUpUser(event)
-    this.props.history.push('/dashboard')
+      .then(r => {
+        if (r === "ERROR") {
+          return console.log("hit error");
+        }
+        this.props.history.push('/about_us')
+      })
   }
 
   render(){
     return(
-      <div className="ui middle aligned center aligned grid">
-        <div className="column">
-        <form className="ui large form" onSubmit = {this.handleSignUp}>
-          <h1>Register</h1>
-          <div className="ui stacked segment">
+      <div>
+        <h1 id="logo">The Compound Effect</h1>
+        <p id="register_here"> the power of small, daily steps</p>
+        <form className="ui form" id="signup_div" onSubmit = {this.handleSignUp}>
+          <h1 id="header">Register</h1>
+
           <div className="field">
+              <label></label>
             <div className='ui left icon input'>
               <i className="user icon">
             </i>
             <input type="text" name="username" placeholder="Username"/>
             </div>
-          </div>
 
           <div className="field">
+              <label></label>
             <div className='ui left icon input'>
               <i className="lock icon">
             </i>
@@ -36,7 +43,7 @@ class SignUp extends Component {
           </div>
       </form>
       </div>
-      </div>
+
     )
   }
 }

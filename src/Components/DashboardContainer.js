@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ToDo from './ToDo'
 import HabitBoards from './HabitBoards'
 import NavBar from './NavBar'
 import { connect } from 'react-redux'
@@ -11,19 +10,10 @@ class DashboardContainer extends Component {
     return(
       <div>
       <NavBar/>
-      <div className="ui segment">
-        <div className="ui two column very relaxed grid">
-          <div className="column">
-            <ToDo/>
-          </div>
-          <div className="column">
-            <HabitBoards/>
-          </div>
+      <h1 id="your_habits">Your Habits:</h1>
+        <div id="dashboard">
+          <HabitBoards/>
         </div>
-          <div className="ui vertical divider">
-            AND
-          </div>
-      </div>
       </div>
     )
   }

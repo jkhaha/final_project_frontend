@@ -14,6 +14,7 @@ const userReducer = (state = initialState, action) => {
     }
     case('SIGN_UP_NEW_USER'): {
       return action.payload.user
+      console.log("in sign up");
     }
     default:
       return state;

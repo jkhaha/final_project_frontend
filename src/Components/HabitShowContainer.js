@@ -39,6 +39,7 @@ class HabitShowContainer extends Component {
   }
 
   render(){
+    console.log(this.props);
     let entriesToRender = this.props.entries.map(entryObj => <EntriesComponent key={entryObj.id} entry={entryObj}/>)
     return(
       <div>

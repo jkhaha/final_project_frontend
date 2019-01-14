@@ -10,6 +10,7 @@ const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case('LOG_IN'): {
       return action.payload.user
+      console.log("in log in");
     }
     case('SIGN_UP_NEW_USER'): {
       return action.payload.user

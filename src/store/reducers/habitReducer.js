@@ -10,6 +10,7 @@ const habitReducer = (state = initialState, action) => {
       console.log("creating habit");
     }
     case ('FETCH_USER_HABITS'): {
+      console.log("can filter?");
       // const userHabits = state.filter((habit) => {habit.user_id === action.payload})
       return {...state, habits: action.payload}
     }

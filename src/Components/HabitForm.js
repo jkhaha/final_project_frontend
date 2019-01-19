@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 import NavBar from './NavBar'
 
 class HabitForm extends Component {
@@ -97,7 +97,7 @@ class HabitForm extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    currentUserId: state.currentUser.id
+    currentUserId: state.id
   }
 }
 

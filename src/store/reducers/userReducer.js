@@ -21,7 +21,6 @@ const userReducer = (state = initialState, action) => {
     }
     case ('FETCH_USER_HABITS'): {
       const userHabits = action.payload.filter((habit) => {
-        console.log(userHabits)
         return habit.user_id === state.id
       })
       return {...state, habits: userHabits}
@@ -33,6 +32,7 @@ const userReducer = (state = initialState, action) => {
       return {...state, selectedHabit: action.payload}
     }
     case ('FETCH_HABIT_ENTRIES'): {
+      console.log("in fetch habit entries", action.payload);
       return {...state, entries: action.payload}
     }
     default:

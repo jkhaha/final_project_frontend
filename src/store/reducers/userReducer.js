@@ -20,8 +20,11 @@ const userReducer = (state = initialState, action) => {
       return {...state, habits: [...state.habits, action.payload]}
     }
     case ('FETCH_USER_HABITS'): {
-      // const userHabits = state.filter((habit) => {habit.user_id === action.payload})
-      return {...state, habits: action.payload}
+      const userHabits = action.payload.filter((habit) => {
+        console.log(userHabits)
+        return habit.user_id === state.id
+      })
+      return {...state, habits: userHabits}
     }
     case('FETCH_CHOSEN_HABIT'): {
       return {...state, selectedHabit: action.payload}

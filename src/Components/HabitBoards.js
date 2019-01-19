@@ -22,6 +22,7 @@ class HabitBoards extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     habits: state.habits
   }

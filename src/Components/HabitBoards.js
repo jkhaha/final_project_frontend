@@ -23,7 +23,7 @@ class HabitBoards extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    habits: state.habits.habits
+    habits: state.habits
   }
 }
 

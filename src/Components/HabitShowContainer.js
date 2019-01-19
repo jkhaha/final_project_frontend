@@ -77,9 +77,10 @@ class HabitShowContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    selectedHabit: state.habits.selectedHabit,
-    entries: state.entries.entries
+    selectedHabit: state.selectedHabit,
+    entries: state.entries
   }
 }
 

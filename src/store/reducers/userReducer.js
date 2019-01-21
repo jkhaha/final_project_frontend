@@ -8,7 +8,6 @@ const initialState = {
 }
 
 const userReducer = (state = initialState, action) => {
-// add a switch statement
   switch (action.type) {
     case('LOG_IN'): {
       return {...state, id: action.payload.user.id, username: action.payload.user.username}
@@ -32,7 +31,6 @@ const userReducer = (state = initialState, action) => {
       return {...state, selectedHabit: action.payload}
     }
     case ('FETCH_HABIT_ENTRIES'): {
-      console.log("in fetch habit entries", action.payload);
       return {...state, entries: action.payload}
     }
     default:

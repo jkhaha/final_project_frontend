@@ -5,7 +5,7 @@ body {
     font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://images.unsplash.com/photo-1496517463163-3550265405c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
+  background-image: url("https://images.unsplash.com/photo-1485841890310-6a055c88698a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-attachment: fixed;
   background-position: center;
    background-repeat: no-repeat;
@@ -17,10 +17,15 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
-#login_div, #signup_div, #habit_form, #dashboard {
+#habit_form, #dashboard {
   margin: 25px 50px 75px;
 }
 
+#login_div, #signup_div {
+  margin: 25px 50px 75px;
+  padding-left: 350px;
+  padding-right: 350px;
+}
 #logo {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -93,7 +98,9 @@ code {
 
 #explanation{
   margin: 40px 50px 75px;
-  text-align: center
+  text-align: center;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 #explanation_tag{

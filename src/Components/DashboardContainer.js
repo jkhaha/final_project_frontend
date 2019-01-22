@@ -10,7 +10,7 @@ class DashboardContainer extends Component {
     return(
       <div>
       <NavBar/>
-      <h1 id="your_habits">Your Habits:</h1>
+      <h1 id="your_habits"> Here are the habits you are working on, {this.props.username}:</h1>
         <div id="dashboard">
           <HabitBoards/>
         </div>
@@ -20,7 +20,9 @@ class DashboardContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {user: state.user}
+  return {
+    username: state.username
+  }
 }
 
 export default connect(mapStateToProps)(DashboardContainer)

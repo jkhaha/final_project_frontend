@@ -90,7 +90,7 @@ console.log(this.props.selectedHabit);
 
 const mapStateToProps = (state) => {
   return {
-    selectedHabit: state.habits.selectedHabit
+    selectedHabit: state.selectedHabit
   }
 }
 

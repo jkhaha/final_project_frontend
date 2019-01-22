@@ -7,28 +7,30 @@ class HabitCard extends Component {
 
   render(){
   return (
-    <div className="ui one column grid">
-      <div className="column">
+    <div className="habits">
+      <ul>
         <Link to='/habits'>
-          <div className="ui fluid card"  onClick={() => this.props.getSingleHabit(this.props.habit)} id="habit_card">
-            <div className="image">
-              <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=710&q=80" alt="difficult roads lead to beautiful destinations"/>
-            </div>
-            <div id="habit_card_desc">{this.props.habit.description} </div>
+          <div className="habit_line"  onClick={() => this.props.getSingleHabit(this.props.habit)} id="habit_card">
+            <li className="habit_description">
+              {this.props.habit.description}
+            </li>
           </div>
         </Link>
-      </div>
+      </ul>
     </div>
   );
 }
 }
 
-// const mapStateToProps = (state, ownProps) => {
-//   return { selectedHabit: ownProps.habit.id === state.habits.selectedHabit.id }
-// }
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    username: state.username
+  }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return { getSingleHabit: (habit) => dispatch(getSingleHabit(habit)) }
 }
 
-export default connect(null, mapDispatchToProps)(HabitCard)
+export default connect(mapStateToProps, mapDispatchToProps)(HabitCard)

@@ -8,7 +8,7 @@ class Explanation extends Component {
       <NavBar/>
         <div id="explanation">
           <p id="explanation_tag"><b>What is the purpose of The Compound Effect?</b></p>
-          <p>The Compound Effect is a habit tracker that helps you set habits, track how well you are doing with the habit,
+          <p>The Compound Effect is a habit tracker that helps you set daily habits, track how well you are doing with the habit,
           and adjust habits as necessary.</p>
           <p id="explanation_tag"><b>How to use The Compound Effect:</b></p>
           <p>Click on "Create A Habit" and the go to your Dashboard to see your habit! (tracking functionality will be in the next version)</p>

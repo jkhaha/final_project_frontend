@@ -39,7 +39,7 @@ class HabitShowContainer extends Component {
   }
 
   render(){
-    console.log(this.props);
+    let betterFormatStartDate = this.props.selectedHabit.start_date.slice(0, 10)
     let entriesToRender = this.props.entries.map(entryObj => <EntriesComponent key={entryObj.id} entry={entryObj}/>)
     return(
       <div>
@@ -47,7 +47,7 @@ class HabitShowContainer extends Component {
         <div id="habit_description" className="split left">
         <p id="habit_header"><b>The Habit:</b> {this.props.selectedHabit.description}</p>
         <p><b>Frequency:</b> {this.props.selectedHabit.frequency}</p>
-        <p><b>Start Date:</b> {this.props.selectedHabit.start_date}</p>
+        <p><b>Start Date:</b> {betterFormatStartDate}</p>
         <p><b>Cue:</b> {this.props.selectedHabit.cue}</p>
         <p><b>Routine:</b> {this.props.selectedHabit.routine}</p>
         <p><b>Reward:</b> {this.props.selectedHabit.reward}</p>
@@ -77,7 +77,6 @@ class HabitShowContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     selectedHabit: state.selectedHabit,
     entries: state.entries

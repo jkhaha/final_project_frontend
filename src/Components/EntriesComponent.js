@@ -14,7 +14,6 @@ class EntriesComponent extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     entries: state.entries
   }

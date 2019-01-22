@@ -17,7 +17,13 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
-#habit_form, #dashboard {
+#habit_form {
+  margin: 25px 50px 75px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+#dashboard {
   margin: 25px 50px 75px;
 }
 
@@ -26,11 +32,17 @@ code {
   padding-left: 350px;
   padding-right: 350px;
 }
+
 #logo {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 40px;
   margin: 25px;
+}
+
+#logo-post-login {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 #register_here{
@@ -46,6 +58,10 @@ code {
   background-color: rgba(255,255,255,0.5);
 }
 
+#dropdown {
+  background-color: rgba(255,255,255,0.5);
+}
+
 #habit_description{
     margin: 25px 50px 75px;
     font-family: 'Montserrat', sans-serif;
@@ -55,7 +71,12 @@ code {
 #your_habits{
   margin: 25px 50px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+#habit_description{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
 }
 
 #habit_card_desc{
@@ -66,7 +87,7 @@ code {
 
 #habit_header{
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 20px;
 }
 
 
@@ -106,3 +127,44 @@ code {
 #explanation_tag{
   font-size: 18px;
 }
+
+.dropbtn {
+  /* color: white; */
+  background-color: #f1f1f1;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}

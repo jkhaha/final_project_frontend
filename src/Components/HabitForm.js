@@ -32,7 +32,6 @@ class HabitForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log('inside handle Submit')
     let options = {
             method: "POST",
             headers: {

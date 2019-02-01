@@ -32,7 +32,7 @@ class HabitShowContainer extends Component {
             body: JSON.stringify({entry: {
                 habit_id: this.props.selectedHabit.id,
                 completed_status: false,
-                date_time: ''
+                date_time: this.props.date
             }})
           }
             fetch("http://localhost:3001/entries", options)
@@ -40,6 +40,7 @@ class HabitShowContainer extends Component {
 
   render(){
     let betterFormatStartDate = this.props.selectedHabit.start_date.slice(0, 10)
+
     let entriesToRender = this.props.entries.map(entryObj => <EntriesComponent key={entryObj.id} entry={entryObj}/>)
     return(
       <div>
@@ -77,9 +78,11 @@ class HabitShowContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log("state in habit show container", state);
   return {
     selectedHabit: state.selectedHabit,
-    entries: state.entries
+    entries: state.entries,
+    date: state.selectedHabit.start_date
   }
 }
 

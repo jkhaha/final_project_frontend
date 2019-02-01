@@ -31,7 +31,10 @@ const userReducer = (state = initialState, action) => {
       return {...state, selectedHabit: action.payload}
     }
     case ('FETCH_HABIT_ENTRIES'): {
-      return {...state, entries: action.payload}
+      const habitEntries = action.payload.filter((entries) => {
+        return entries.habit_id === state.selectedHabit.id
+      })
+      return {...state, entries: habitEntries}
     }
     default:
       return state;

@@ -5,18 +5,10 @@ import { connect } from 'react-redux'
 import NavBar from './NavBar'
 
 class HabitForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startDate: new Date()
-    };
-  }
 
   state = {
     id: 0,
     description: '',
-    frequency: '',
-    start_date: '',
     cue: '',
     routine: '',
     reward: ''
@@ -40,8 +32,6 @@ class HabitForm extends Component {
             body: JSON.stringify({habit: {
                 user_id: this.props.currentUserId,
                 description: event.target.description.value,
-                frequency: event.target.frequency.value,
-                start_date: event.target.start_date.value,
                 cue: event.target.cue.value,
                 routine: event.target.routine.value,
                 reward: event.target.reward.value
@@ -60,15 +50,6 @@ class HabitForm extends Component {
           <div className="required field">
             <label>Habit Description</label>
             <input type="text" name="description" value={this.state.description} onChange={this.handleChange} placeholder="ex. workout for 30 minutes a day"/>
-          </div>
-          <div className="required field">
-          <label>Habit Frequency</label>
-            <input type="text" name="frequency" value={this.state.frequency} onChange={this.handleChange} placeholder="ex. every 3 days"/>
-          </div>
-
-          <div className=" field">
-          <label>Start Date</label>
-            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="MM/DD/YYYY"/>
           </div>
 
           <div className=" field">

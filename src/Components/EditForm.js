@@ -8,8 +8,6 @@ class EditForm extends Component {
   state = {
     id: 0,
     description: '',
-    frequency: '',
-    start_date: '',
     cue: '',
     routine: '',
     reward: ''
@@ -27,8 +25,6 @@ class EditForm extends Component {
       this.setState({
         id: this.props.selectedHabit.id,
         description: this.props.selectedHabit.description,
-        frequency: this.props.selectedHabit.frequency,
-        start_date: this.props.selectedHabit.start_date,
         cue: this.props.selectedHabit.cue,
         routine: this.props.selectedHabit.routine,
         reward: this.props.selectedHabit.reward
@@ -54,15 +50,6 @@ console.log(this.props.selectedHabit);
           <div className="required field">
             <label>Habit Description</label>
             <input type="text" name="description" value={this.state.description} onChange={this.handleChange} placeholder={this.props.selectedHabit.description}/>
-          </div>
-          <div className="required field">
-          <label>Habit Frequency</label>
-            <input type="text" name="frequency" value={this.state.frequency} onChange={this.handleChange} placeholder={this.props.selectedHabit.frequency}/>
-          </div>
-
-          <div className=" field">
-          <label>Start Date</label>
-            <input type="text" name="start_date" value={this.state.start_date} onChange={this.handleChange} placeholder="MM/DD/YYYY"/>
           </div>
 
           <div className=" field">

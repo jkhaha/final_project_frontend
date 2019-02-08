@@ -37,8 +37,9 @@ class HabitForm extends Component {
             }})
           }
           fetch("http://localhost:3001/habits", options)
+          console.log(this.props);
   }
-
+  
   render(){
     return(
       <div>

@@ -40,7 +40,6 @@ class EditForm extends Component {
 
 
   render() {
-console.log(this.props.selectedHabit);
     return (
       <div>
       <NavBar/>

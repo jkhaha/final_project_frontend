@@ -20,7 +20,6 @@ class EditForm extends Component {
   }
 
   componentDidUpdate (prevState, prevProps) {
-    console.log("prevProps", prevProps);
     if (prevProps.id !== this.props.selectedHabit.id) {
       this.setState({
         id: this.props.selectedHabit.id,

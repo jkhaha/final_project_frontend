@@ -17,6 +17,20 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
+.entries_id, .entries_button{
+  display: inline-block;
+}
+
+.entries_button{
+  margin-left: 10px;
+  border-radius: 12px;
+}
+
+.entries_button:hover{
+  background-color: #4CAF50;
+  color: white;
+}
+
 #habit_form {
   margin: 25px 50px 75px;
   padding-left: 200px;

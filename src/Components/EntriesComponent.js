@@ -5,8 +5,8 @@ import { loadEntries } from '../store/actions/entryActions'
 
 class EntriesComponent extends Component {
   handleClick = (e) => {
-    console.log("hi i'm here", this.props);
-    this.props.editEntry(this.state)
+    console.log("hi i'm here", this.props.entry);
+    this.props.editEntry(this.props.entry)
   }
 
   render(){

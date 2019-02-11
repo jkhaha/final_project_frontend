@@ -49,7 +49,7 @@ export const signUp = (event) => {
   }
 
   export const updateEntryFromAdapter = (entry) => {
-    console.log("in adapter", entry);
+    console.log("in adapter", entry.completed_status);
     return fetch(`http://localhost:3001/entries/${entry.id}`, {
       method: 'PATCH',
       headers: {
@@ -58,7 +58,7 @@ export const signUp = (event) => {
       },
       body: JSON.stringify({
         entry: {
-          completed_status: true
+          completed_status: !entry.completed_status
         }
       })
     })

@@ -37,7 +37,6 @@ class HabitForm extends Component {
             }})
           }
           fetch("http://localhost:3001/habits", options)
-          this.props.history.push('/dashboard')
   }
 
   render(){

@@ -12,6 +12,7 @@ class HabitShowContainer extends Component {
   }
 
   handleDelete=(event) => {
+    event.preventDefault()
     let options = {
       method: "DELETE",
       headers: {
@@ -20,11 +21,11 @@ class HabitShowContainer extends Component {
       }
     }
       fetch(`http://localhost:3001/habits/${this.props.selectedHabit.id}`, options)
+      this.props.history.push('/about_us')
   }
 
   handleCreate=(event) => {
     for(let i = 0; i < 11; i ++){
-
     event.preventDefault()
     let options = {
             method: "POST",

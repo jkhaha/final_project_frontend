@@ -11,7 +11,7 @@ class Explanation extends Component {
           <p>The Compound Effect is a habit tracker that helps you set daily habits, track how well you are doing with the habit,
           and adjust habits as necessary.</p>
           <p id="explanation_tag"><b>How to use The Compound Effect:</b></p>
-          <p>Click on "Create A Habit" and the go to your Dashboard to see your habit! (tracking functionality will be in the next version)</p>
+          <p>Click on "Create A Habit" and the go to your Dashboard to see your habit!</p>
           <p id="explanation_tag"><b>What are cues, routines, and rewards?</b></p>
           <p>A <i>cue</i> is a trigger that tells your brain which habit or behavior to do next.</p>
           <p>The <i>routine</i> is the habit you want to start, such as working out, or journalling every day.</p>

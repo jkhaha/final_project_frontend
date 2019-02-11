@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { updateEntry } from '../store/actions/entryActions'
+import { loadEntries } from '../store/actions/entryActions'
 
 class EntriesComponent extends Component {
+  handleClick = (e) => {
+    console.log("hi i'm here", this.props.entry);
+    this.props.editEntry(this.props.entry)
+  }
+
   render(){
+    console.log(this.props);
     return(
       <div>
-      <div id="ui_checkbox">
-        <input type="checkbox" id="my_check" name="example"></input> <label>{this.props.entry.id}</label>
+      <div>
+        <span>
+          <p className="entries_id">{this.props.entry.id}</p>
+          <button onClick={this.handleClick} className="entries_button">Completed</button>
+        </span>
       </div>
     </div>
     )
@@ -19,10 +30,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     loadEntries: () => dispatch(loadEntries())
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
+  return {
+    loadEntries: () => dispatch(loadEntries()),
+    editEntry: (entry) => dispatch(updateEntry(entry))
+  }
+}
 
-export default connect(mapStateToProps)(EntriesComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(EntriesComponent)

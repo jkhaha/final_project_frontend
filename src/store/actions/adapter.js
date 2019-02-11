@@ -47,3 +47,20 @@ export const signUp = (event) => {
     })
     .then(r => r.json())
   }
+
+  export const updateEntryFromAdapter = (entry) => {
+    console.log("in adapter", entry);
+    return fetch(`http://localhost:3001/entries/${entry.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        entry: {
+          completed_status: true
+        }
+      })
+    })
+    .then(r => r.json())
+  }

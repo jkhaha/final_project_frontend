@@ -37,6 +37,7 @@ const userReducer = (state = initialState, action) => {
       return {...state, entries: habitEntries}
     }
     case ('EDIT_ENTRY'): {
+      return {...state, selectedEntry: action.payload}
       console.log("in user reducer editing entry", action.payload);
     }
     default:

@@ -23,6 +23,8 @@ class HabitShowContainer extends Component {
   }
 
   handleCreate=(event) => {
+    for(let i = 0; i < 11; i ++){
+
     event.preventDefault()
     let options = {
             method: "POST",
@@ -32,10 +34,10 @@ class HabitShowContainer extends Component {
             body: JSON.stringify({entry: {
                 habit_id: this.props.selectedHabit.id,
                 completed_status: false,
-                date_time: this.props.date
             }})
           }
             fetch("http://localhost:3001/entries", options)
+    }
   }
 
   render(){
